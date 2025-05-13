@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Pulse - Your AI Real Estate Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div id="floating-points"></div>
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+    <div class="glow"></div>
+    
+    <nav class="sidebar">
+        <div class="logo">
+            <h2>🏠 A+ Realty & Mortgage</h2>
+        </div>
+        <nav class="nav-links">
+            <li>
+                <input type="radio" id="home" name="navigation" checked>
+                <label for="home">Home</label>
+            </li>
+            <li>
+                <input type="radio" id="chatbot" name="navigation">
+                <label for="chatbot">AI Chatbot Demo</label>
+            </li>
+            <li>
+                <input type="radio" id="integration" name="navigation">
+                <label for="integration">Integration Plan</label>
+            </li>
+            <li>
+                <input type="radio" id="timeline" name="navigation">
+                <label for="timeline">Implementation Timeline</label>
+            </li>
+        </nav>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="content" id="home-section">
+        <h1>Property Pulse</h1>
+        <h2>Your AI Real Estate Assistant</h2>
+
+        <div class="intro-section">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Ask me anything about our properties! 👋</h3>
+                    <p>I can help you:</p>
+                    <ul>
+                        <li>Find homes within your budget 💰</li>
+                        <li>Compare different properties 🏠</li>
+                        <li>Learn about neighborhoods 🌳</li>
+                        <li>Get property details instantly ⚡</li>
+                    </ul>
+                    <p>Just type your question in the chat below!</p>
+                </div>
+                <div class="intro-image">
+                    <img src="{{ url_for('static', filename='image.jpg') }}" alt="AI Real Estate Management" class="hero-image" style="width: 100%; max-width: 800px; height: auto;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Adjust the new image position to upper right -->
+        <div class="new-image" style="float: right; margin-left: -20px; margin-top: -20px;">
+            <img src="{{ url_for('static', filename='image3.jpg') }}" alt="New Image" style="width: 100%; max-width: 400px; height: auto;">
+        </div>
+
+        <div class="questions-section">
+            <h3>💡 Try asking questions like:</h3>
+            <div class="questions-grid">
+                <div class="finding-properties">
+                    <h4>Finding Properties</h4>
+                    <ul>
+                        <li>💬 "What homes are available under $400,000?"</li>
+                        <li>💬 "Show me houses with 3 bedrooms"</li>
+                        <li>💬 "Which properties have pools?"</li>
+                    </ul>
+                </div>
+                <div class="comparing-options">
+                    <h4>Comparing Options</h4>
+                    <ul>
+                        <li>💬 "What's the price range for 4-bedroom homes?"</li>
+                        <li>💬 "Tell me about downtown properties"</li>
+                        <li>💬 "Compare houses with large yards"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h3>🚀 What Makes Property Pulse Special</h3>
+            <div class="features-grid">
+                <div class="home-buyers">
+                    <h4>👨‍👩‍👧‍👦 For Home Buyers</h4>
+                    <ul>
+                        <li>Quick answers about any property</li>
+                        <li>Easy price comparisons</li>
+                        <li>Neighborhood information</li>
+                        <li>Available 24/7</li>
+                    </ul>
+                </div>
+                <div class="agents">
+                    <h4>🏆 For Real Estate Agents</h4>
+                    <ul>
+                        <li>Automatic property matching</li>
+                        <li>Quick client responses</li>
+                        <li>Easy listing management</li>
+                        <li>More time for what matters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-it-works">
+            <h3>🤔 How It Works</h3>
+            <ol>
+                <li>Ask a Question - Type anything about properties</li>
+                <li>Get Instant Answers - AI finds the perfect matches</li>
+                <li>Explore Details - Learn more about each property</li>
+                <li>Stay Informed - Get updates on new listings</li>
+            </ol>
+        </div>
+
+        <div class="stats-section">
+            <h3>📈 Why People Love Property Pulse</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Super Fast</span>
+                        <span class="stat-value">2 seconds</span>
+                        <span class="stat-desc">average response time</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Super Smart</span>
+                        <span class="stat-value">94%</span>
+                        <span class="stat-desc">accuracy</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Super Helpful</span>
+                        <span class="stat-value">100+</span>
+                        <span class="stat-desc">daily chats</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ready-section">
+            <h3>👋 Ready to Start?</h3>
+            <p>Click "AI Chatbot Demo" in the sidebar to start chatting!</p>
+            <p>Need help? Just ask "How can you help me?" in the chat.</p>
+        </div>
+    </div>
+
+    <!-- Implementation Timeline Section -->
+    <div class="content" id="timeline-section" style="display: none;">
+        <h1>Implementation Timeline</h1>
+        <p class="subtitle">Efficient deployment in 4 months</p>
+
+
+        <div class="components-section">
+            <h3>Key Integration Components</h3>
+            
+            <div class="components-grid">
+                <div class="component-item">
+                    <h4>1. Website Integration</h4>
+                    <ul>
+                        <li>Embed chatbot widget</li>
+                        <li>Customize UI to match brand</li>
+                        <li>Implement responsive design</li>
+                    </ul>
+                </div>
+
+                <div class="component-item">
+                    <h4>2. Database Connection</h4>
+                    <ul>
+                        <li>Secure property database link</li>
+                        <li>Real-time data synchronization</li>
+                        <li>Data encryption and protection</li>
+                    </ul>
+                </div>
+
+                <div class="component-item">
+                    <h4>3. API Integration</h4>
+                    <ul>
+                        <li>MLS API connection</li>
+                        <li>Third-party service APIs</li>
+                        <li>Data consistency protocols</li>
+                    </ul>
+                </div>
+
+                <div class="component-item">
+                    <h4>4. Testing and QA</h4>
+                    <ul>
+                        <li>Comprehensive integration tests</li>
+                        <li>Performance optimization</li>
+                        <li>User acceptance testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integration Plan Section -->
+    <div class="content" id="integration-section" style="display: none;">
+        <h1>Integration Plan</h1>
+        <p class="subtitle">Seamless integration with your existing systems</p>
+<!-- next -->
+
+        <div class="system-overview">
+            <h2>How Our Integrated System Works</h2>
+            
+            <h3>System Components</h3>
+            <div class="components-grid">
+                <div class="component-card">
+                    <h4>1. 🌐 Website</h4>
+                    <p>Starting point for user interactions</p>
+                </div>
+                <div class="component-card">
+                    <h4>2. 🤖 Chatbot</h4>
+                    <p>Central hub of the system</p>
+                </div>
+                <div class="component-card">
+                    <h4>3. 💾 Database</h4>
+                    <p>Contains all property listings and information</p>
+                </div>
+                <div class="component-card">
+                    <h4>4. 🔗 MLS API</h4>
+                    <p>Access to broader range of listings and market data</p>
+                </div>
+                <div class="component-card">
+                    <h4>5. 🏦 3rd Party APIs</h4>
+                    <p>Additional services like mortgage calculators</p>
+                </div>
+                <div class="component-card">
+                    <h4>6. 👥 Users</h4>
+                    <p>End-users interacting with the system</p>
+                </div>
+            </div>
+
+            <div class="data-flow">
+                <h3>Data Flow</h3>
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <p>1. 🌐🤖 Website to Chatbot: User queries are passed to the chatbot</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>2. 🤖💾 Chatbot to Database: Chatbot retrieves property information</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>3. 💾🤖 Database to Chatbot: Information is sent back to the chatbot</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>4. 🤖🔗 Chatbot to MLS API: Chatbot queries for additional listings</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>5. 🔗🤖 MLS API to Chatbot: Additional property data is returned</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>6. 🤖🏦 Chatbot to 3rd Party APIs: Chatbot requests supplementary info</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>7. 🏦🤖 3rd Party APIs to Chatbot: Supplementary data is returned</p>
+                    </div>
+                    <div class="flow-step">
+                        <p>8. 🤖👥 Chatbot to Users: Compiled information is presented to users</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="system-notes">
+                <div class="note success">
+                    This integrated system acts like a super-knowledgeable real estate agent, available 24/7 to provide your customers with the best service possible!
+                </div>
+                <div class="note info">
+                    This system ensures that your customers always get accurate, up-to-date information, enhancing their experience and potentially boosting your sales!
+                </div>
+            </div>
+
+            <div class="benefits-section">
+                <h2>Key Benefits of Our Integration Approach</h2>
+                <table class="benefits-table">
+                    <thead>
+                        <tr>
+                            <th>Benefit</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Seamless User Experience</td>
+                            <td>Ensures smooth interaction between users and the AI chatbot across all platforms.</td>
+                        </tr>
+                        <tr>
+                            <td>Real-time Data Accuracy</td>
+                            <td>Provides up-to-date information by syncing with your database and MLS in real-time.</td>
+                        </tr>
+                        <tr>
+                            <td>Scalability</td>
+                            <td>Easily adapts to growing inventory and increasing user base without performance loss.</td>
+                        </tr>
+                        <tr>
+                            <td>Enhanced Security</td>
+                            <td>Implements robust data protection measures to safeguard sensitive information.</td>
+                        </tr>
+                        <tr>
+                            <td>Improved Customer Engagement</td>
+                            <td>Offers 24/7 availability, quick responses, and personalized interactions.</td>
+                        </tr>
+                        <tr>
+                            <td>Operational Efficiency</td>
+                            <td>Automates routine inquiries, freeing up your team for high-value tasks.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Section -->
+    <div class="content" id="chatbot-section" style="display: none;">
+        <h1>AI Chatbot Demo</h1>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your message here..." />
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cursorOuter = document.querySelector('.cursor-outer');
+        const cursorInner = document.querySelector('.cursor-inner');
+        const glow = document.querySelector('.glow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let rafId = null;
+
+        function updateCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            
+            cursorOuter.style.left = mouseX + 'px';
+            cursorOuter.style.top = mouseY + 'px';
+            cursorInner.style.left = cursorX + 'px';
+            cursorInner.style.top = cursorY + 'px';
+            glow.style.left = mouseX + 'px';
+            glow.style.top = mouseY + 'px';
+            
+            moveParticles(mouseX, mouseY);
+            
+            rafId = requestAnimationFrame(updateCursor);
+        }
+
+        function createParticles() {
+            const particleCount = 100;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                const originalX = Math.random() * window.innerWidth;
+                const originalY = Math.random() * window.innerHeight;
+                
+                particle.style.left = originalX + 'px';
+                particle.style.top = originalY + 'px';
+                
+                particle.dataset.originalX = originalX;
+                particle.dataset.originalY = originalY;
+                particle.dataset.currentX = originalX;
+                particle.dataset.currentY = originalY;
+                
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                document.body.appendChild(particle);
+            }
+        }
+
+        function moveParticles(mouseX, mouseY) {
+            document.querySelectorAll('.particle').forEach(particle => {
+                const currentX = parseFloat(particle.dataset.currentX);
+                const currentY = parseFloat(particle.dataset.currentY);
+                const originalX = parseFloat(particle.dataset.originalX);
+                const originalY = parseFloat(particle.dataset.originalY);
+                
+                const dx = mouseX - currentX;
+                const dy = mouseY - currentY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                let newX = currentX;
+                let newY = currentY;
+                
+                if (distance < 200) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (200 - distance) / 3;
+                    
+                    newX = currentX - Math.cos(angle) * force;
+                    newY = currentY - Math.sin(angle) * force;
+                } else {
+                    const returnSpeed = 0.02;
+                    const dxReturn = originalX - currentX;
+                    const dyReturn = originalY - currentY;
+                    
+                    newX = currentX + dxReturn * returnSpeed;
+                    newY = currentY + dyReturn * returnSpeed;
+                }
+                
+                newX = Math.max(0, Math.min(window.innerWidth, newX));
+                newY = Math.max(0, Math.min(window.innerHeight, newY));
+                
+                particle.dataset.currentX = newX;
+                particle.dataset.currentY = newY;
+                
+                particle.style.left = newX + 'px';
+                particle.style.top = newY + 'px';
+                
+                const moveDistance = Math.sqrt(
+                    Math.pow(newX - currentX, 2) + 
+                    Math.pow(newY - currentY, 2)
+                );
+                const baseOpacity = 0.3;
+                const opacityBoost = Math.min(moveDistance / 10, 0.5);
+                particle.style.opacity = baseOpacity + opacityBoost;
+            });
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if (!rafId) rafId = requestAnimationFrame(updateCursor);
+        });
+
+        createParticles();
+
+        // Add random movement
+        setInterval(() => {
+            document.querySelectorAll('.particle').forEach(particle => {
+                const currentX = parseFloat(particle.dataset.currentX);
+                const currentY = parseFloat(particle.dataset.currentY);
+                
+                const dx = mouseX - currentX;
+                const dy = mouseY - currentY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance > 200) {
+                    const randomX = (Math.random() - 0.5) * 2;
+                    const randomY = (Math.random() - 0.5) * 2;
+                    
+                    const newX = Math.max(0, Math.min(window.innerWidth, currentX + randomX));
+                    const newY = Math.max(0, Math.min(window.innerHeight, currentY + randomY));
+                    
+                    particle.dataset.currentX = newX;
+                    particle.dataset.currentY = newY;
+                    
+                    particle.style.left = newX + 'px';
+                    particle.style.top = newY + 'px';
+                }
+            });
+        }, 50);
+
+        document.querySelectorAll('.nav-links input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Hide all sections
+                document.querySelectorAll('.content').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show selected section
+                if (this.id === 'home') {
+                    document.getElementById('home-section').style.display = 'block';
+                } else if (this.id === 'timeline') {
+                    document.getElementById('timeline-section').style.display = 'block';
+                } else if (this.id === 'integration') {
+                    document.getElementById('integration-section').style.display = 'block';
+                } else if (this.id === 'chatbot') {
+                    document.getElementById('chatbot-section').style.display = 'block';
+                } 
+                // Add other conditions for remaining tabs as they are created
+            });
+        });
+
+        // Add this after your existing cursor and particle code
+        function addTextHoverEffects() {
+            // Select all text elements we want to animate
+            const textElements = document.querySelectorAll('h1, h2, h3, h4, p, li, .stat-content, .flow-step p');
+            
+            textElements.forEach(element => {
+                element.classList.add('scale-on-hover');
+                
+                element.addEventListener('mouseenter', () => {
+                    cursorOuter.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorOuter.style.border = '2px solid var(--primary-light)';
+                    cursorInner.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorOuter.style.border = '2px solid var(--primary-light)';
+                    cursorInner.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
+        }
+
+        // Call the function after particles are created
+        createParticles();
+        addTextHoverEffects();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendButton = document.getElementById('send-button');
+            const userInput = document.getElementById('user-input');
+            const chatBox = document.getElementById('chat-box');
+
+            sendButton.addEventListener('click', async () => {
+                const userMessage = userInput.value;
+                if (userMessage.trim() === "") return;
+
+                // Display user message
+                chatBox.innerHTML += `<div class="chat-message user-message">You: ${userMessage}</div>`;
+                userInput.value = '';
+
+                // Get AI response
+                const response = await getAIResponse(userMessage);
+                chatBox.innerHTML += `<div class="chat-message bot-message">AI: ${formatResponse(response)}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+            });
+
+            async function getAIResponse(text) {
+                const response = await fetch('/get-ai-response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: text })
+                });
+
+                const data = await response.json();
+                return data.response;
+            }
+
+            function formatResponse(response) {
+                // Example formatting: make text between ** bold
+                return response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            }
+        });
+    </script>
+</body>
+</html>
